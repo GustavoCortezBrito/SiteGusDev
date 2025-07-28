@@ -3,6 +3,7 @@
 import { useEffect, useState, useMemo } from "react";
 import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
+import type { OutMode } from "@tsparticles/engine";
 
 export default function ParticlesBackground() {
   const [init, setInit] = useState(false);
@@ -16,9 +17,9 @@ export default function ParticlesBackground() {
     });
   }, []);
 
-  const particlesLoaded = () => {
-    console.log("Particles carregadas ✅");
-  };
+  // const particlesLoaded = () => {
+  //   console.log("Particles carregadas ✅");
+  // };
 
   const options = useMemo(
     () => ({
@@ -50,7 +51,7 @@ export default function ParticlesBackground() {
           opacity: 0.5,
           width: 1,
         },
-        move: { enable: true, speed: 1, outModes: { default: "bounce" } },
+        move: { enable: true, speed: 1, outModes: { default: "bounce" as OutMode } },
         size: { value: { min: 1, max: 5 } },
         opacity: { value: 0.5 },
         shape: { type: "circle" },
@@ -62,5 +63,5 @@ export default function ParticlesBackground() {
 
   if (!init) return null;
 
-  return <Particles id="tsparticles" loaded={particlesLoaded} options={options} />;
+  return <Particles id="tsparticles" options={options} />;
 }
