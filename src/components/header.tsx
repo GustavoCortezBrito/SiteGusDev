@@ -15,10 +15,11 @@ export default function Header() {
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-8 text-xl">
+        <nav className="hidden md:flex items-center gap-6 text-lg">
           <Button link="/#Hero" title="Home" />
-          <Button link="/#skills" title="Habilidades" />
           <Button link="/#about" title="Sobre" />
+          <Button link="/#services" title="Serviços" />
+          <Button link="/#projects" title="Projetos" />
           <Button link="/#contact" title="Contato" isEnhanced />
         </nav>
 
@@ -38,8 +39,9 @@ export default function Header() {
       {menuOpen && (
         <div className="flex flex-col items-center gap-4 py-4 md:hidden bg-[#111111] text-xl border-t border-white/10">
           <Button link="/#Hero" title="Home" />
-          <Button link="/#skills" title="Habilidades" />
           <Button link="/#about" title="Sobre" />
+          <Button link="/#services" title="Serviços" />
+          <Button link="/#projects" title="Projetos" />
           <Button link="/#contact" title="Contato" isEnhanced />
         </div>
       )}

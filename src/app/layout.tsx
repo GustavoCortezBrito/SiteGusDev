@@ -16,8 +16,8 @@ import ScrollProgressBar from "@/components/scrollprogressbar";
 // });
 
 export const metadata: Metadata = {
-  title: "Site portfolio do dev Gustavo Cortez",
-  description: "Esse site tem o objetivo de apresentar o dev gustavo cortez de brito e suas respectivas especialidades"
+  title: "Gustavo Cortez - Desenvolvedor Web & Estudante de Medicina",
+  description: "Gustavo Cortez de Brito - Estudante de Medicina na UNOESTE e Sistemas de Informação na UFSC. Desenvolvedor web especializado em sites, landing pages e SEO. Uno tecnologia e saúde para criar soluções digitais modernas e eficientes."
 };
 
 export default function RootLayout({
