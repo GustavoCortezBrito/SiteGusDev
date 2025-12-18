@@ -2,7 +2,7 @@ import { FaCode, FaSearch, FaMobile, FaRocket } from "react-icons/fa";
 
 export default function Services() {
   return (
-    <section id="services" className="flex flex-col items-center justify-center text-white w-full">
+    <section id="services" className="flex flex-col items-center justify-center text-white w-full px-6">
       <div className="max-w-7xl w-full">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Como posso transformar seu negócio</h2>
         <p className="text-gray-400 text-center mb-12 max-w-3xl mx-auto text-lg">

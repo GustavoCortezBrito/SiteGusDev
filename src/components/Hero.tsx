@@ -4,12 +4,14 @@ import Button from "./button";
 export default function Hero() {
   return (
     <section 
-      className="flex flex-col-reverse md:flex-row items-center justify-center gap-12 px-4 text-white"
+      className="flex flex-col items-center justify-center text-white w-full px-6"
       itemScope 
       itemType="https://schema.org/Person"
     >
-      {/* Texto */}
-      <div className="text-center md:text-left max-w-md">
+      <div className="max-w-7xl w-full">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-12">
+          {/* Texto */}
+          <div className="text-center md:text-left max-w-2xl">
         <h1 className="text-4xl md:text-5xl font-bold mb-6" itemProp="headline">
           Transformo ideias em <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">sites que vendem</span> 🚀
         </h1>
@@ -33,17 +35,19 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Imagem circular */}
-      <div className="w-72 h-72 transition-all duration-200 hover:scale-110 hover:cursor-pointer rounded-full border-4 border-white overflow-hidden relative shadow-lg">
-        <Image
-          src="/GustavoCortezDev.jpg"
-          alt="Gustavo Cortez - Desenvolvedor Web e Estudante de Medicina"
-          fill
-          className="object-cover"
-          itemProp="image"
-          priority
-          sizes="(max-width: 768px) 288px, 288px"
-        />
+          {/* Imagem circular */}
+          <div className="w-72 h-72 transition-all duration-200 hover:scale-110 hover:cursor-pointer rounded-full border-4 border-white overflow-hidden relative shadow-lg">
+            <Image
+              src="/GustavoCortezDev.jpg"
+              alt="Gustavo Cortez - Desenvolvedor Web e Estudante de Medicina"
+              fill
+              className="object-cover"
+              itemProp="image"
+              priority
+              sizes="(max-width: 768px) 288px, 288px"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

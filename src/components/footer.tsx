@@ -38,12 +38,19 @@ export default function Footer() {
           </p>
           <p>
             Desenvolvido por{" "}
-            <span className="text-orange-400 font-semibold">Gustavo Cortez de Brito</span>
             <a 
               href="https://www.instagram.com/gustavocortez.dev/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-orange-400 ml-1"
+              className="text-white font-semibold hover:text-purple-400 transition"
+            >
+              Gustavo Cortez de Brito
+            </a>
+            <a 
+              href="https://www.instagram.com/gustavocortez.dev/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white ml-1 hover:text-purple-400 transition"
             >
               ©
             </a>

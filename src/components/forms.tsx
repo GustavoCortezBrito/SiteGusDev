@@ -80,7 +80,8 @@ Podemos conversar sobre orçamento e prazo?`;
 
   return (
     <section id="contact" className="flex flex-col items-center justify-center px-6 text-white w-full">
-      <div className="w-full max-w-2xl">
+      <div className="max-w-7xl w-full">
+        <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Pronto para decolar seu negócio?</h2>
@@ -160,7 +161,7 @@ Podemos conversar sobre orçamento e prazo?`;
           <button
             type="submit"
             onClick={handleSubmit}
-            className="w-full bg-gradient-to-r from-green-500 via-purple-500 to-pink-500 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition-all hover:scale-[1.02] flex items-center justify-center gap-3 shadow-lg shadow-purple-500/20"
+            className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition-all hover:scale-[1.02] flex items-center justify-center gap-3 shadow-lg shadow-purple-500/20"
           >
             <FaWhatsapp />
             <FaPaperPlane />
@@ -200,6 +201,7 @@ Podemos conversar sobre orçamento e prazo?`;
             </a>
             {" "}para uma conversa mais rápida!
           </p>
+        </div>
         </div>
       </div>
     </section>

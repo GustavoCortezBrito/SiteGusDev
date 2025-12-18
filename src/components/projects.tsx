@@ -1,20 +1,8 @@
 import { FaExternalLinkAlt, FaBolt, FaBuilding, FaGlobe } from "react-icons/fa";
-import { useState } from "react";
-import Image from "next/image";
 
 // Componente para imagem do projeto
 function ProjectImage({ title }: { title: string }) {
-  const [imageError, setImageError] = useState(false);
-
-  // Mapear imagens estáticas para cada projeto
-  const getStaticImage = (title: string) => {
-    if (title.includes('Eletro')) return '/projects/eletrosolucoes.jpg';
-    if (title.includes('Li Hai')) return '/projects/lihai.jpg';
-    if (title.includes('Ambitus')) return '/projects/ambitus.jpg';
-    return null;
-  };
-
-  // Ícones e cores temáticas para fallback
+  // Ícones e cores temáticas para cada projeto
   const getProjectFallback = (title: string) => {
     if (title.includes('Eletro')) {
       return {
@@ -23,11 +11,18 @@ function ProjectImage({ title }: { title: string }) {
         color: 'text-yellow-400'
       };
     }
+    if (title.includes('Li Hai')) {
+      return {
+        icon: <FaBuilding className="text-yellow-400 text-6xl" />,
+        gradient: 'from-yellow-900/30 to-orange-900/30',
+        color: 'text-yellow-400'
+      };
+    }
     if (title.includes('Ambitus')) {
       return {
-        icon: <FaGlobe className="text-blue-400 text-6xl" />,
-        gradient: 'from-blue-900/30 to-cyan-900/30',
-        color: 'text-blue-400'
+        icon: <FaGlobe className="text-green-600 text-6xl" />,
+        gradient: 'from-green-900/30 to-green-800/30',
+        color: 'text-green-600'
       };
     }
     return {
@@ -37,24 +32,9 @@ function ProjectImage({ title }: { title: string }) {
     };
   };
 
-  const staticImage = getStaticImage(title);
   const fallback = getProjectFallback(title);
 
-  // Se tiver imagem estática, tenta usar ela primeiro
-  if (staticImage && !imageError) {
-    return (
-      <Image
-        src={staticImage}
-        alt={`Screenshot de ${title}`}
-        fill
-        className="object-cover transition-transform group-hover:scale-105"
-        onError={() => setImageError(true)}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      />
-    );
-  }
-
-  // Fallback com design bonito
+  // Sempre usar fallback (sem tentar carregar imagens que não existem)
   return (
     <div className={`w-full h-full flex flex-col items-center justify-center bg-gradient-to-br ${fallback.gradient} text-white relative overflow-hidden`}>
       {/* Padrão de fundo */}
@@ -63,10 +43,9 @@ function ProjectImage({ title }: { title: string }) {
       </div>
       
       {/* Conteúdo */}
-      <div className="relative z-10 text-center">
+      <div className="relative z-10 text-center flex flex-col items-center justify-center">
         {fallback.icon}
         <h3 className={`text-xl font-bold mt-4 ${fallback.color}`}>{title}</h3>
-        <p className="text-sm text-gray-300 mt-2 px-4">Clique para visitar</p>
       </div>
       
       {/* Efeito decorativo */}
@@ -79,7 +58,7 @@ function ProjectImage({ title }: { title: string }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="flex flex-col items-center justify-center text-white w-full">
+    <section id="projects" className="flex flex-col items-center justify-center text-white w-full px-6">
       <div className="max-w-7xl w-full">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Projetos que Geraram Resultados</h2>
         <p className="text-gray-400 text-center mb-12 max-w-3xl mx-auto text-lg">
@@ -139,8 +118,15 @@ interface ProjectCardProps {
 }
 
 function ProjectCard({ title, description, tags, liveUrl }: ProjectCardProps) {
+  const handleCardClick = () => {
+    window.open(liveUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <div className="bg-[#1c1c1c] border border-gray-700 rounded-xl overflow-hidden hover:border-purple-500 transition-all hover:scale-105 flex flex-col h-full">
+    <div 
+      onClick={handleCardClick}
+      className="bg-[#1c1c1c] border border-gray-700 rounded-xl overflow-hidden hover:border-purple-500 transition-all hover:scale-105 flex flex-col h-full cursor-pointer"
+    >
       {/* Imagem do projeto */}
       <div className="relative w-full h-52 bg-gray-800 overflow-hidden group">
         <ProjectImage title={title} />
@@ -170,6 +156,7 @@ function ProjectCard({ title, description, tags, liveUrl }: ProjectCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-purple-500/20 text-purple-300 px-6 py-3 rounded-full border border-purple-500/30 hover:bg-purple-500/30 transition font-medium"
+            onClick={(e) => e.stopPropagation()} // Evita duplo clique
           >
             <FaExternalLinkAlt /> Visitar site
           </a>

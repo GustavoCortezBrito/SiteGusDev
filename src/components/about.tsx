@@ -4,24 +4,24 @@ export default function About() {
   return (
     <section 
       id="about" 
-      className="flex flex-col items-center justify-center text-white w-full"
+      className="flex flex-col items-center justify-center text-white w-full px-6"
       itemScope
       itemType="https://schema.org/AboutPage"
     >
-      <div className="max-w-5xl w-full">
+      <div className="max-w-7xl w-full">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center" itemProp="headline">Por que escolher meu trabalho?</h2>
         
         {/* Texto principal */}
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <p className="text-lg md:text-xl leading-relaxed mb-6">
-            Sou <span className="font-bold text-purple-400">Gustavo Cortez de Brito</span>, e minha história é única: 
-            estudei <span className="font-bold text-blue-400">Sistemas de Informação na UFSC</span> e atualmente 
-            curso <span className="font-bold text-red-400">Medicina na UNOESTE</span>.
+            Sou <span className="font-bold text-white">Gustavo Cortez de Brito</span>, e minha história é única: 
+            estudei <span className="font-bold text-white">Sistemas de Informação na UFSC</span> e atualmente 
+            curso <span className="font-bold text-white">Medicina na UNOESTE</span>.
           </p>
           <p className="text-lg md:text-xl leading-relaxed">
-            Essa combinação me dá uma visão diferenciada: <span className="font-bold text-purple-400">precisão técnica</span> 
-            da medicina e <span className="font-bold text-purple-400">criatividade tecnológica</span> do desenvolvimento. 
-            Resultado? Sites que não apenas impressionam, mas <span className="font-bold text-green-400">geram resultados reais</span> 
+            Essa combinação me dá uma visão diferenciada: <span className="font-bold text-white">precisão técnica</span> 
+            da medicina e <span className="font-bold text-white">criatividade tecnológica</span> do desenvolvimento. 
+            Resultado? Sites que não apenas impressionam, mas <span className="font-bold text-white">geram resultados reais</span> 
             para o seu negócio.
           </p>
         </div>
@@ -48,8 +48,8 @@ export default function About() {
         {/* Conclusão */}
         <div className="text-center bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-8 max-w-3xl mx-auto">
           <p className="text-lg md:text-xl leading-relaxed">
-            <span className="font-bold text-purple-400">Resultado garantido:</span> Sites que carregam em menos de 3 segundos, 
-            aparecem no Google e <span className="font-bold text-green-400">convertem visitantes em clientes</span>. 
+            <span className="font-bold text-white">Resultado garantido:</span> Sites que carregam em menos de 3 segundos, 
+            aparecem no Google e <span className="font-bold text-white">convertem visitantes em clientes</span>. 
             Sua presença digital merece o melhor! 🚀
           </p>
         </div>

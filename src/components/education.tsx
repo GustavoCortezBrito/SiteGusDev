@@ -2,8 +2,8 @@ import { FaGraduationCap, FaUserMd, FaLaptopCode } from "react-icons/fa";
 
 export default function Education() {
   return (
-    <section id="education" className="flex flex-col items-center justify-center text-white w-full">
-      <div className="max-w-6xl w-full">
+    <section id="education" className="flex flex-col items-center justify-center text-white w-full px-6">
+      <div className="max-w-7xl w-full">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Formação que Faz a Diferença</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -46,7 +46,7 @@ export default function Education() {
               <span className="font-bold text-purple-400">Meu diferencial único:</span> Combino a 
               <span className="text-red-400 font-semibold"> precisão da medicina</span> com a 
               <span className="text-blue-400 font-semibold"> inovação da tecnologia</span>. 
-              Resultado? Sites que funcionam perfeitamente e <span className="text-green-400 font-semibold">entregam resultados reais</span> 
+              Resultado? Sites que funcionam perfeitamente e <span className="text-white font-semibold">entregam resultados reais</span> 
               para o seu negócio.
             </p>
           </div>

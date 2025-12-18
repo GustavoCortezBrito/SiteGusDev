@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "@/components/header";
 import Background from "@/components/background";
 import ScrollProgressBar from "@/components/scrollprogressbar";
-import StructuredData from "@/components/structured-data";
 
 const baseUrl = 'https://gustavocortez.dev';
 
@@ -116,6 +115,13 @@ export const metadata: Metadata = {
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
     'format-detection': 'telephone=no',
+    'og:image:width': '1200',
+    'og:image:height': '630',
+    'og:image:type': 'image/png',
+    'og:site_name': 'Gustavo Cortez Dev',
+    'og:locale': 'pt_BR',
+    'twitter:site': '@gustavocortezdev',
+    'twitter:creator': '@gustavocortezdev',
   },
 };
 
@@ -126,45 +132,9 @@ export default function RootLayout({
 }>) {
   return (
     <html className="scroll-smooth" lang="pt-BR">
-      <head>
-        <StructuredData />
-        
-        {/* Preconnect for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://wa.me" />
-        <link rel="dns-prefetch" href="https://api.whatsapp.com" />
-        
-        {/* WhatsApp specific meta tags */}
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:alt" content="Gustavo Cortez - Desenvolvedor Web & Estudante de Medicina" />
-        
-        {/* Additional Open Graph tags */}
-        <meta property="og:site_name" content="Gustavo Cortez Dev" />
-        <meta property="og:locale" content="pt_BR" />
-        <meta property="og:type" content="website" />
-        
-        {/* Twitter specific */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@gustavocortezdev" />
-        <meta name="twitter:creator" content="@gustavocortezdev" />
-        
-        {/* Mobile optimization */}
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        
-        {/* Favicon and icons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
-      </head>
       <body className="relative z-0">
         <Background/>
-        <Header></Header>
+        <Header />
         <ScrollProgressBar />
         {children}
       </body>
