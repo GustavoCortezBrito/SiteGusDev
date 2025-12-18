@@ -3,25 +3,32 @@ import Button from "./button";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col-reverse md:flex-row items-center justify-center gap-12 px-4 text-white">
+    <section 
+      className="flex flex-col-reverse md:flex-row items-center justify-center gap-12 px-4 text-white"
+      itemScope 
+      itemType="https://schema.org/Person"
+    >
       {/* Texto */}
       <div className="text-center md:text-left max-w-md">
-        <h1 className="text-4xl font-bold mb-4">Oi! Eu sou o Gustavo Cortez 👨‍💻</h1>
-        <p className="text-lg leading-relaxed">
-          Estudo Sistemas de Informação na UFSC e foi lá que descobri minha paixão por desenvolvimento web <br/> principalmente front-end e SEO.
+        <h1 className="text-4xl md:text-5xl font-bold mb-6" itemProp="headline">
+          Transformo ideias em <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">sites que vendem</span> 🚀
+        </h1>
+        <p className="text-lg md:text-xl leading-relaxed text-gray-300" itemProp="description">
+          Sou <span itemProp="name">Gustavo Cortez</span>, <span itemProp="jobTitle">desenvolvedor web</span> especializado em criar sites modernos, rápidos e otimizados para SEO.
         </p>
-        <p className="text-lg leading-relaxed mt-4">
-          Hoje estou cursando Medicina na UNOESTE, mas continuo programando por hobby (e pra alguns freelas também 🚀).
-        </p>
-        <p className="text-lg leading-relaxed mt-4">
-          Se você precisa de um site bonito, rápido e bem ranqueado no Google, bora conversar!
+        <p className="text-lg leading-relaxed mt-4 text-gray-400">
+          Estudante de <span itemProp="studiesAt">Medicina na UNOESTE</span> com sólida experiência em <span itemProp="alumniOf">Sistemas de Informação pela UFSC</span>. Uno tecnologia e criatividade para entregar resultados reais.
         </p>
 
         {/* Botões */}
-        <div className="mt-6 flex justify-center md:justify-start gap-4">
-          <Button link="#contact" title="Vamos conversar" isEnhanced={true} />
-          <a href="#projects" className="border hover:scale-95 border-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-black transition">
-            Ver projetos
+        <div className="mt-8 flex justify-center md:justify-start gap-4">
+          <Button link="#contact" title="Iniciar meu projeto" isEnhanced={true} />
+          <a 
+            href="#projects" 
+            className="border hover:scale-95 border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition"
+            aria-label="Ver portfólio de projetos desenvolvidos"
+          >
+            Ver portfólio
           </a>
         </div>
       </div>
@@ -30,9 +37,12 @@ export default function Hero() {
       <div className="w-72 h-72 transition-all duration-200 hover:scale-110 hover:cursor-pointer rounded-full border-4 border-white overflow-hidden relative shadow-lg">
         <Image
           src="/GustavoCortezDev.jpg"
-          alt="Foto do Dev"
+          alt="Gustavo Cortez - Desenvolvedor Web e Estudante de Medicina"
           fill
           className="object-cover"
+          itemProp="image"
+          priority
+          sizes="(max-width: 768px) 288px, 288px"
         />
       </div>
     </section>

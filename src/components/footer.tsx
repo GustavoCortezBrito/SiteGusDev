@@ -1,5 +1,3 @@
-import { FaHeart } from "react-icons/fa";
-
 export default function Footer() {
   return (
     <footer className="bg-[#0a0a0a] border-t border-gray-800 text-white py-8 px-6">
@@ -33,8 +31,21 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-gray-400 text-sm">
-          <p className="flex items-center justify-center gap-2">
-            © {new Date().getFullYear()} Gustavo Cortez • Feito com <FaHeart className="text-red-500" /> e muito código
+          <p className="mb-2">
+            © {new Date().getFullYear()} Gustavo Cortez. Todos os direitos reservados.
+          </p>
+          <p>
+            Desenvolvido por{" "}
+            <span className="text-orange-400 font-semibold">Gustavo Cortez de Brito</span>
+            <a 
+              href="https://www.instagram.com/gustavocortez.dev/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-orange-400 ml-1"
+            >
+              ©
+            </a>
+            , Dev Web
           </p>
         </div>
       </div>
