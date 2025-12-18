@@ -1,8 +1,9 @@
 import { FaExternalLinkAlt, FaBolt, FaBuilding, FaGlobe } from "react-icons/fa";
 import { useState } from "react";
+import Image from "next/image";
 
 // Componente para imagem do projeto
-function ProjectImage({ title, liveUrl }: { title: string; liveUrl: string }) {
+function ProjectImage({ title }: { title: string }) {
   const [imageError, setImageError] = useState(false);
 
   // Mapear imagens estáticas para cada projeto
@@ -42,12 +43,13 @@ function ProjectImage({ title, liveUrl }: { title: string; liveUrl: string }) {
   // Se tiver imagem estática, tenta usar ela primeiro
   if (staticImage && !imageError) {
     return (
-      <img
+      <Image
         src={staticImage}
         alt={`Screenshot de ${title}`}
-        className="w-full h-full object-cover transition-transform group-hover:scale-105"
-        loading="lazy"
+        fill
+        className="object-cover transition-transform group-hover:scale-105"
         onError={() => setImageError(true)}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
     );
   }
@@ -91,7 +93,6 @@ export default function Projects() {
             title="Eletro Soluções"
             description="Transformei uma empresa local em referência regional. Site otimizado que aumentou em 300% as consultas online para projetos de energia solar."
             tags={["Energia Solar", "SEO Local", "Conversão"]}
-            image="/eletrosolucoes.jpg"
             liveUrl="https://eletrosolucoes.com.br/"
           />
 
@@ -100,7 +101,6 @@ export default function Projects() {
             title="Li Hai"
             description="Consultoria que precisava transmitir confiança. Criei uma identidade digital elegante que dobrou o número de clientes corporativos."
             tags={["Consultoria", "Branding", "B2B"]}
-            image="/lihai.jpg"
             liveUrl="https://lihai.com.br/"
           />
 
@@ -109,7 +109,6 @@ export default function Projects() {
             title="Ambitus Global"
             description="Startup de tecnologia sustentável que conquistou investidores. Site internacional que comunica inovação e credibilidade."
             tags={["Startup", "Sustentabilidade", "Global"]}
-            image="/ambitus.jpg"
             liveUrl="https://www.ambitusglobal.com/"
           />
         </div>
@@ -136,16 +135,15 @@ interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
-  image: string;
   liveUrl: string;
 }
 
-function ProjectCard({ title, description, tags, image, liveUrl }: ProjectCardProps) {
+function ProjectCard({ title, description, tags, liveUrl }: ProjectCardProps) {
   return (
     <div className="bg-[#1c1c1c] border border-gray-700 rounded-xl overflow-hidden hover:border-purple-500 transition-all hover:scale-105 flex flex-col h-full">
       {/* Imagem do projeto */}
       <div className="relative w-full h-52 bg-gray-800 overflow-hidden group">
-        <ProjectImage title={title} liveUrl={liveUrl} />
+        <ProjectImage title={title} />
       </div>
 
       {/* Conteúdo */}

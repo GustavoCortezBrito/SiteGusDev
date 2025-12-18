@@ -1,24 +1,26 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-[#0a0a0a] border-t border-gray-800 text-white py-8 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Links */}
         <div className="flex flex-wrap justify-center gap-6 mb-6 text-gray-400">
-          <a href="/#Hero" className="hover:text-purple-400 transition">
+          <Link href="/#Hero" className="hover:text-purple-400 transition">
             Home
-          </a>
-          <a href="/#about" className="hover:text-purple-400 transition">
+          </Link>
+          <Link href="/#about" className="hover:text-purple-400 transition">
             Sobre
-          </a>
-          <a href="/#services" className="hover:text-purple-400 transition">
+          </Link>
+          <Link href="/#services" className="hover:text-purple-400 transition">
             Serviços
-          </a>
-          <a href="/#projects" className="hover:text-purple-400 transition">
+          </Link>
+          <Link href="/#projects" className="hover:text-purple-400 transition">
             Projetos
-          </a>
-          <a href="/#contact" className="hover:text-purple-400 transition">
+          </Link>
+          <Link href="/#contact" className="hover:text-purple-400 transition">
             Contato
-          </a>
+          </Link>
           <a 
             href="https://www.instagram.com/gustavocortez.dev/" 
             target="_blank" 
